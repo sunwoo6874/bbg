@@ -1,0 +1,5 @@
+.gradle
+.vscode
+build
+bin
+bbg/logs/*.log

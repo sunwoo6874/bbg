@@ -1,0 +1,33 @@
+<configuration>
+	<appender name="f" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>../logs/bbg.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy"> 
+			<fileNamePattern>../logs/bbg_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<maxFileSize>100MB</maxFileSize>
+			<maxHistory>360</maxHistory>
+			<totalSizeCap>100GB</totalSizeCap>
+		</rollingPolicy>
+
+		<encoder>
+			<pattern>%date %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- Console -->
+	<appender name="c" class="ch.qos.logback.core.ConsoleAppender">
+		<append>true</append>
+		<encoder>
+			<pattern>%date %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+		<appender-ref ref="c" />
+	</appender>
+
+	<root level="debug">
+		<appender-ref ref="c" />		
+		<appender-ref ref="f" />
+	</root>
+
+</configuration>
