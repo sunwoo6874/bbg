@@ -14,7 +14,7 @@ repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
-version = "1.0.0" // build/libs/ 에 버전이 명시되어 생긴다.
+version = "2.0.0" // build/libs/ 에 버전이 명시되어 생긴다.
 
 dependencies {
     // This dependency is used by the application.
